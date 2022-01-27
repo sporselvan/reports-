@@ -1,6 +1,6 @@
 <?php
 
-$x = "hello everyone";
+$x = "hello everyone"
 echo $x;
 
 ?>
