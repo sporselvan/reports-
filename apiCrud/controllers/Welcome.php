@@ -6,28 +6,27 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('welcome_message');
-		$this->load->model('crud');
+             $this->load->view('welcome_message');
+	     $this->load->model('crud');
 	}
 
 	public function __construct()
 	{
-	parent::__construct();   
-	$this->load->database();
-	$this->load->model('Crud');
+	     parent::__construct();   
+	     $this->load->database();
+	     $this->load->model('Crud');
 	}
 
 	
 	public function readAllRecord(){
 		
-		 $result['data']  = $this->Crud->readAllData();
-		 print_r(json_encode($result));
+            $result['data']  = $this->Crud->readAllData();
+            print_r(json_encode($result));
 		 
 	}
 
 	public function create(){
-               
-			  
+        
 		     $_POST = json_decode(file_get_contents("php://input"), true);
 			  
 			  $data['firstname'] =   $_POST['firstname'];
@@ -38,7 +37,8 @@ class Welcome extends CI_Controller {
 			  $data['dob']= $_POST['dob'];
 			  $data['gender'] = $_POST['gender'];
 			  echo json_encode($data);
-              $this -> Crud -> insertdata($data);
+		
+                          $this -> Crud -> insertdata($data);
 
 	}
 
@@ -48,9 +48,9 @@ class Welcome extends CI_Controller {
 		    
 		        $_POST = json_decode(file_get_contents("php://input"), true);
 
-			    $id = $_POST['id'];
-	          	$firstname =   $_POST['firstname'];
-		        $surname = $_POST['surname'];
+			        $id = $_POST['id'];
+	          	        $firstname =   $_POST['firstname'];
+		                $surname = $_POST['surname'];
 				$contact = $_POST['contact'];
 				$password =  $_POST['password'];
 				$dob= $_POST['dob'];
@@ -64,8 +64,9 @@ class Welcome extends CI_Controller {
 		
 		$_POST = json_decode(file_get_contents("php://input"), true);
 		$id = $_POST['id'];
-	
-	    $this -> Crud -> dlt($id);
+		
+	        $this -> Crud -> dlt($id);
+		
 		}
 		   
 	
