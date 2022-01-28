@@ -2,10 +2,11 @@
 
 class Crud extends CI_Model{
 
-    
+
     public function readAllData(){
         
           $query = $this ->db-> get('info');
+          
           return $query -> result();
      }
 
